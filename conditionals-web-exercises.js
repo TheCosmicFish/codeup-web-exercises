@@ -207,6 +207,6 @@ if(userB === true) {
 
 }}
 
-console.log(numberFacts())
+console.log(numberFacts())}}
 
 
