@@ -5,14 +5,14 @@ if (possiblyFive === 5){
     console.log("It is not five")
 };*/
 
-function isItANumber(parameter) {
+/*function isItANumber(parameter) {
     if (typeof parameter === "number"){
         return "That's a number!";}
     else if (typeof parameter == "boolean"){
         return "Way to be technical";
     }
     else{ return "That is not a number!";}
-}
+}*/
 
 let hasACow = true;
 let hasGoat = false;
