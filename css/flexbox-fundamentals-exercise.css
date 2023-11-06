@@ -40,7 +40,7 @@ section {
     display: flex;
     flex-direction: row;
     flex-basis: auto;
-    justify-content: stretch;
+
 }
 
 section:nth-of-type(1) {
@@ -112,15 +112,16 @@ section:nth-of-type(3) h3 {
 
 .large-brown-box {
     height: 5em;
-    width: 100em;
+    flex-grow: 4;
     background: brown;
-}
+    margin: 0 .5em;
+
 
 .large-brown-box:nth-of-type(2) {
     margin: 0 4em;
-    justify-self: stretch;
 
-}
+
+}}
 
 section:nth-of-type(5) {
     justify-content: space-evenly;
