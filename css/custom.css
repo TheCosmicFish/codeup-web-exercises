@@ -1,13 +1,21 @@
 .jumbotron{
-    background-image:url(images/pizza.png);
+    background-image: url(images/pizza.png);
     background-size: cover;
     height: 346px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
-h2{
-    align-content: center;
-}
 
-#left-align{
-    right: 0;
+    .bg-light.p-4 {
+        opacity: .7;
+        width: 100%; /* Or a specific width if you want the light bar to have a max width */
+        height: 5em;
+        display: flex;
+        justify-content: center; /* Horizontally center content within the light bar */
+        align-items: center; /* Vertically center content within the light bar */
+    }
 }
