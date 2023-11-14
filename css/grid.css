@@ -1,11 +1,12 @@
 h1,h2{
     text-align: center;
 }
-#first{
+/*#first{
     text-align: center;
 }
-
+*/
 #second p{
+    justify-items: center;
 
 
 }
