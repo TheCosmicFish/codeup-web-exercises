@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Attributes and CSS Exercise</title>
+    <link rel="stylesheet" type="text/css" href="css/attributes-style.css">
+</head>
+<body>
+<div id="profile-card">
+    <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture">
+    <script>
+
+//----------------------------------------------------------------------------------
+        const profilePic = document.getElementById("profile-pic")
+
+        let updatePic = function () {
+            const profilePic = document.getElementById("profile-pic")
+            profilePic.setAttribute("src", "https://via.placeholder.com/151")
+        }
+
+        let thePicChange = setTimeout(updatePic, 2000)
+//---------------------------------------------------------------------------------
+        let updateName = function () {
+            const profileName = document.getElementById("profile-name")
+            profileName.innerText = "Cody Fishback"
+        }
+
+        let theNameChange = setTimeout(updateName, 4000)
+
+//---------------------------------------------------------------------------------
+        let updateClass = function () {
+          const profileDesc = document.getElementById("profile-desc")
+
+          profileDesc.classList.add("background-color");
+          profileDesc.classList.add("color");
+          console.log(profileDesc.classList);}
+
+        let theDescriptionChange = setTimeout(updateClass, 6000)
+
+
+    </script>
+    <h2 id="profile-name">John Doe</h2>
+    <p id="profile-desc">This is a sample description text for a profile card. JavaScript will be used to manipulate
+        this card.</p>
+</div>
+<button id="toggle-btn">Toggle Background</button>
+<script src="js/attributes-script.js"></script>
+</body>
+</html>
