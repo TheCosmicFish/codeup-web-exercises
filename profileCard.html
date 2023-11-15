@@ -32,9 +32,23 @@
 
           profileDesc.classList.add("background-color");
           profileDesc.classList.add("color");
+
           console.log(profileDesc.classList);}
 
         let theDescriptionChange = setTimeout(updateClass, 6000)
+
+//---------------------------------------------------------------------------------
+let updateCard = function () {
+  const profileCard = document.getElementById("profile-card")
+
+  profileCard.classList.add("background-color");
+
+
+  profileCard.classList.toggle("background-color3");
+
+  console.log(profileCard.classList);}
+
+let theBackgroundChange = setInterval(updateCard, 2000)
 
 
     </script>
