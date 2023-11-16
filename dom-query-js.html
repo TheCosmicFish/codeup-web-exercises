@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html  lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>DOM: Query and Modify</title>
@@ -31,7 +31,7 @@
 <button id="button4">Button4</button>
 </div>
 <script>
-    "use strict";
+ /*  "use strict";
     const button1 = document.querySelector("#button1");
     const button2 = document.querySelector("#button2");
     const button3 = document.querySelector("#button3");
@@ -40,12 +40,12 @@
 
     // TODO: Uncomment next line and get the main header element by id
 
-   //const mainHeader = document.querySelector("#main-header")
+   const mainHeader = document.querySelector("#main-header")
 
     // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-   //button1.addEventListener("click", () => {
-   //    mainHeader.innerHTML = "Javascript is cool";
-   //})
+   button1.addEventListener("click", () => {
+       mainHeader.innerHTML = "Javascript is cool";
+   })
 
 
 
@@ -60,28 +60,28 @@
 
 
     // TODO: Uncomment the next line and get all list items
-     const listItems = document.getElementsByTagName("li")
+   /*  const listItems = document.getElementsByTagName("li")
 
     // TODO: Set text color on every other list item to grey
     button3.addEventListener("click", () => {
-        for(let i = 0; i < listItems.length; i++){
-            if(i % 2 === 0){
+        for (let i = 0; i < listItems.length; i++) {
+            if (i % 2 === 0) {
                 listItems[i].style.color = "grey";
             }
-
         }
-
-    })
-
+    })*/
 
 
 
-    // TODO: Set text color of li with dbid = 1 to blue
+
+
+
+   /* // TODO: Set text color of li with dbid = 1 to blue
     button4.addEventListener('click', () =>{
         listItems[0].style.color ="blue";
         const subParagraphs = document.getElementsByClassName("sub-paragraph");
         subParagraphs[0].innerText = "mission accomplished"
-    })
+    })*/
 
 
 
@@ -93,24 +93,27 @@
     //                  Mouse Event Exercise
 //--------------------------------------------------------------------------------------------
 
-    const theH1 = document.getElementsByTagName("h1");
+    const theH1s = document.querySelectorAll("h1");
+    for(let h1 of theH1s){
 
-    theH1.addEventListener("onclick", ()=>{
-        theH1.style.backgroundColor = "red";
-    });
+    h1.addEventListener("click", ()=>{
+        h1.style.backgroundColor = "red";
+    })}
 
-    const paragraphFont = document.getElementsByTagName("p");
+    const paragraphFont = document.getElementsByClassName("sub-paragraph")[0];
 
-    paragraphFont.addEventListener("dblClick",() => {
-        paragraphFont.style.fontSize = "18 px";
+    paragraphFont.addEventListener("dblclick",() => {
+        paragraphFont.style.fontSize = "18px"
     })
 
-    const listItems2 = document.getElementsByTagName("li");
+    const listItems2 = document.getElementsByTagName("li")
 
-    listItems2.addEventListener("onmouseover", () => {
-        listItems2.style.color = "red";
-        listItems2.addEventListener("mouseleave", () => {
-            listItems2.style.color = "black";
+    Array.from(listItems2).forEach(element => {
+    element.addEventListener("mouseover", () => {
+        element.style.color = "red";});
+
+        element.addEventListener("mouseleave", () => {
+            element.style.color = "black";
         })
     })
 
