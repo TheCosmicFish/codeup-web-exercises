@@ -40,12 +40,12 @@
 
     // TODO: Uncomment next line and get the main header element by id
 
-   const mainHeader = document.querySelector("#main-header")
+   //const mainHeader = document.querySelector("#main-header")
 
     // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-   button1.addEventListener("click", () => {
-       mainHeader.innerHTML = "Javascript is cool";
-   })
+   //button1.addEventListener("click", () => {
+   //    mainHeader.innerHTML = "Javascript is cool";
+   //})
 
 
 
@@ -89,6 +89,32 @@
 
 
     // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+
+    //                  Mouse Event Exercise
+//--------------------------------------------------------------------------------------------
+
+    const theH1 = document.getElementsByTagName("h1");
+
+    theH1.addEventListener("onclick", ()=>{
+        theH1.style.backgroundColor = "red";
+    });
+
+    const paragraphFont = document.getElementsByTagName("p");
+
+    paragraphFont.addEventListener("dblClick",() => {
+        paragraphFont.style.fontSize = "18 px";
+    })
+
+    const listItems2 = document.getElementsByTagName("li");
+
+    listItems2.addEventListener("onmouseover", () => {
+        listItems2.style.color = "red";
+        listItems2.addEventListener("mouseleave", () => {
+            listItems2.style.color = "black";
+        })
+    })
+
+
 
 
 
