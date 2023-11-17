@@ -14,17 +14,20 @@
 <script>
     "use strict";
 
-    const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown","ArrowLeft","ArrowRight","ArrowLeft", "ArrowRight","a","b"]
-
-    const codeInputs = document.getElementById("textField")
-
-    codeInputs.addEventListener("keyup", (ev) => {
-        let codeArray = [];
-        codeArray[0,1,2,3] = ev
-
-        console.log(codeArray)
-
+    const konamiCode = "ArrowUp, ArrowUp, ArrowDown, ArrowDown,ArrowLeft,ArrowRight,ArrowLeft, ArrowRight,a,b"
+    const codeInput = event => {
+        console.log(`keypressed: ${event.key}`)
+        console.log(event.target);
+    }
+    document.querySelector("#textField", codeInput(){
+        if(codeInput.length === konamiCode.length){
+            alert("It shall be done")
+        }
     })
+
+
+
+
 
 
 
