@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+
+</head>
+<body>
+<h1>Konami Code</h1>
+
+    <label for="textField">Enter A Cheat Code</label><br>
+    <input type="text" id="textField" name="textField" placeholder="Code Input">
+
+
+<script>
+    "use strict";
+
+    const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown","ArrowLeft","ArrowRight","ArrowLeft", "ArrowRight","a","b"]
+
+    const codeInputs = document.getElementById("textField")
+
+    codeInputs.addEventListener("keyup", (ev) => {
+        let codeArray = [];
+        codeArray[0,1,2,3] = ev
+
+        console.log(codeArray)
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     document.addEventListener("keyup", event => console.log(event.key) );
+</script>
+</body>
+</html>

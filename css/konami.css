@@ -1,0 +1,8 @@
+@font-face {
+    font-family: arcade-legacy;
+    src: url(images/arcade-legacy.ttf);
+}
+
+h1{
+    font-family: arcade-legacy,sans-serif;
+}
