@@ -43,7 +43,7 @@
     <dt>How do I apply for a job with the National Park Service?</dt>
     <dd>National Park Service jobs, including both permanent and seasonal positions, are listed on USAJOBs.</dd>
 
-    <dt>What do I need to know about driving off road in national parks?</dt>
+    <dt>What do I need to know about driving off-road in national parks?</dt>
     <dd>Before you head out, check with the national parks that you intend to visit. In many national parks, off-road
         driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.
     </dd>
@@ -51,7 +51,7 @@
 <div id="State-Parks">
     <h1>Parks List</h1>
     <div id="Enchanted-Rock-div">
-        <h3 id="Enchanted-Rock-heading">Enchanted Rock</h3>
+        <h3  class = "h3" id="Enchanted-Rock-heading">Enchanted Rock</h3>
         <ul id="Enchanted-Rock">
             <li>Hiking Enchanted Rock is like climbing the stairs of a 30- or 40-story building</li>
             <li>The Texas State Capitol was built from the same stone that makes up Enchanted Rock</li>
@@ -60,7 +60,7 @@
         </ul>
     </div>
     <div id="Big-Bend-div">
-        <h3 id="Big-Bend-heading">Big Bend</h3>
+        <h3 class = "h3" id="Big-Bend-heading">Big Bend</h3>
         <ul id="Big-Bend">
             <li>The park is named Big Bend after the Rio Grande's big bend in west Texas (The Rio Grande flows through
                 the park).
@@ -75,7 +75,7 @@
         </ul>
     </div>
     <div id="Abilene-div">
-        <h3 id="Abilene-heading">Abilene</h3>
+        <h3 class = "h3" id="Abilene-heading">Abilene</h3>
         <ul id="Abilene">
             <li>Original park construction was done by the Civilian Conservation Corps (C.C.C.) in the early 1930's</li>
             <li>A portion of the official Texas longhorn herd and one buffalo are located on site.</li>
@@ -90,15 +90,43 @@
 
      document.querySelector("#Enchanted-Rock")
         .lastElementChild
-        .style.color = "yellow";
+        .style.backgroundColor = "yellow";
 
      document.querySelector("#Big-Bend")
         .lastElementChild
-        .style.color = "yellow";
+        .style.backgroundColor = "yellow";
 
       document.querySelector("#Abilene")
         .lastElementChild
-        .style.color = "yellow";})
+        .style.backgroundColor = "yellow";})
+
+    document.querySelectorAll("h3")[0].addEventListener("click", () => {
+        const stateParksLIs = document.querySelectorAll("h3")[0].nextElementSibling.children;
+        for(let i = 0; i < stateParksLIs.length; i++) {
+            stateParksLIs[i].style.fontWeight = "bold";
+        }
+
+    })
+
+     document.querySelectorAll("h3")[1].addEventListener("click", () => {
+         const stateParksLIs = document.querySelectorAll("h3")[1].nextElementSibling.children;
+         for(let i = 0; i < stateParksLIs.length; i++) {
+             stateParksLIs[i].style.fontWeight = "bold";
+         }
+
+    })
+    document.querySelectorAll("h3")[2].addEventListener("click", () => {
+        const stateParksLIs = document.querySelectorAll("h3")[2].nextElementSibling.children;
+        for(let i = 0; i < stateParksLIs.length; i++) {
+            stateParksLIs[i].style.fontWeight = "bold";
+        }
+
+    })
+
+
+
+
+
 
 
 
