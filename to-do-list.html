@@ -43,7 +43,7 @@
 
                 const doneButton = document.createElement("button")
                 doneButton.innerHTML= "Done"
-                document.querySelector("li").appendChild(doneButton);
+                newTodo.appendChild(doneButton);
                 doneButton.addEventListener("click",() => {
                    document.querySelector("ul").removeChild(newTodo)
 
