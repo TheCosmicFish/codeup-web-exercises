@@ -7,48 +7,25 @@
 <body>
 <h1>Konami Code</h1>
 
-    <label for="textField">Enter A Cheat Code</label><br>
-    <input type="text" id="textField" name="textField" placeholder="Code Input">
-
 
 <script>
     "use strict";
 
-    const konamiCode = "ArrowUp, ArrowUp, ArrowDown, ArrowDown,ArrowLeft,ArrowRight,ArrowLeft, ArrowRight,a,b"
-    const codeInput = event => {
-        console.log(`keypressed: ${event.key}`)
-        console.log(event.target);
-    }
-    document.querySelector("#textField", codeInput(){
-        if(codeInput.length === konamiCode.length){
-            alert("It shall be done")
+    const konamiCode = "ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,ArrowLeft,ArrowRight,a,b";
+    let cheatCode = [];
+
+    document.addEventListener("keydown", (event) => {
+        cheatCode.push(event.key);
+        cheatCode = cheatCode.slice(-konamiCode.split(",").length); // Split and get length
+
+        if (cheatCode.join(',') === konamiCode) {
+            alert("Code Accepted");
+            cheatCode = [];
         }
-    })
+    });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     document.addEventListener("keyup", event => console.log(event.key) );
+        document.addEventListener("keyup", event => console.log(event.key));
 </script>
 </body>
 </html>
