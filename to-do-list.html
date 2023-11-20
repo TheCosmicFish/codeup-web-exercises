@@ -31,23 +31,26 @@
 
 //------------------My code for the To-Do-------------------------------------------------------------
 
-const newTodo = document.createElement("li");
+
             document.getElementById("to-do-form").addEventListener("submit", function (event) {
                 event.preventDefault();
-
+                const newTodo = document.createElement("li");
                 newTodo.className = "form-control";
 
                 newTodo.innerText = document.getElementById("to-do").value
                 document.querySelector("ul").appendChild(newTodo);
+
+
+                const doneButton = document.createElement("button")
+                doneButton.innerHTML= "Done"
                 document.querySelector("li").appendChild(doneButton);
                 doneButton.addEventListener("click",() => {
-                    document.querySelector("ul").removeChild(newTodo)
+                   document.querySelector("ul").removeChild(newTodo)
 
                 })
                 })
 
-    const doneButton = document.createElement("button")
-    doneButton.innerHTML= "Done"
+
 
 
 
