@@ -69,10 +69,12 @@ const longestEmail = users.reduce((total, user) => {
 }," ")
 console.log(longestEmail)
 
+//----------------------------------Reduce 3----------------------------
+
 const userString = users.reduce((totalNames, users) =>{
     return totalNames + users.name + ", "
 }, ' ')
 
-console.log(userString)
+
 
 console.log("Your instructors are" + userString)
