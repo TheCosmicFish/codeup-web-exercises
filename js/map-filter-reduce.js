@@ -38,11 +38,7 @@ const users = [
 
 
 //-----------------------------------Filter------------------------
-const userLang3 = []
-users.forEach(user =>{
-if(user.languages.length >= 3){
-    userLang3.push(user.name);
-}})
+const userLang3 = users.filter(user => user.languages.length >= 3)
 console.log(userLang3)
 
 //-----------------------------------Map---------------------------
