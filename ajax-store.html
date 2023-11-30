@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Categories</th>
+    </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<script>
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+    fetch(`data/inventory.json`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)})
+
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //
+    fetch(`data/inventory.json`)
+        .then(response => response.json())
+        .then(data => {
+            const insertProducts = document.getElementById('insertProducts');
+
+            data.forEach(product => {
+                const row = document.createElement('tr');
+
+                // Title
+                const titleCell = document.createElement('td');
+                titleCell.textContent = product.title;
+                row.appendChild(titleCell);
+
+                // Quantity
+                const quantityCell = document.createElement('td');
+                quantityCell.textContent = product.quantity;
+                row.appendChild(quantityCell);
+
+                // Price
+                const priceCell = document.createElement('td');
+                priceCell.textContent = `$${product.price}`; // Adding a dollar sign before the price
+                row.appendChild(priceCell);
+
+                // Categories
+                const categoriesCell = document.createElement('td');
+                categoriesCell.textContent = product.categories.join(', ');
+                row.appendChild(categoriesCell);
+
+                insertProducts.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+</script>
+
+</body>
+</html>
