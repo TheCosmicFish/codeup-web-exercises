@@ -2,13 +2,22 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Attach a popup to a marker instance</title>
+    <title>My First MapBox Map</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
     <style>
-        body { margin: 0; padding: 0; }
-        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -21,6 +30,7 @@
         border-radius: 50%;
         cursor: pointer;
     }
+
     #marker1 {
         background-image: url('images/Franklins.jpeg');
         background-size: cover;
@@ -29,6 +39,7 @@
         border-radius: 50%;
         cursor: pointer;
     }
+
     #marker2 {
         background-image: url('images/Suerte.jpeg');
         background-size: cover;
@@ -50,62 +61,60 @@
     const canje = [-97.721542, 30.261669];
     const map = new mapboxgl.Map({
         container: 'map',
-// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+
         style: 'mapbox://styles/mapbox/streets-v11',
         center: canje,
         zoom: 15
     });
 
-    // create the popup
-    const popup = new mapboxgl.Popup({ offset: 25 }).setText(
-        'Canje ATX'
+
+    const popup = new mapboxgl.Popup({offset: 25}).setText(
+        'Traditional meets modern in this new age Caribbean restaurant, tucked away on the east side of Austin. Named after the Canje pheasant, national bird of Guyana, Canje pulls inspiration not just from mainland Guyana, but from Jamaica to Puerto Rico, and all the islands in between. The passion project of Guyanese native Chef Tavel Bristol-Joseph, Canje\'s menu explores the cooking techniques, ingredients, and many expressions of vibrant food across the entire region.'
     );
 
-    // create DOM element for the marker
+
     const el = document.createElement('div');
     el.id = 'marker';
 
-    // create the marker
+
     new mapboxgl.Marker(el)
         .setLngLat(canje)
-        .setPopup(popup) // sets a popup on this marker
+        .setPopup(popup)
         .addTo(map);
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiY3JmaXNoYmFjazEiLCJhIjoiY2xwbGZ5MW1kMDI3YTJpbDRpOGQyZ3Z2OSJ9.8KwTH8IqWEuRdkseO-qEcQ';
     const Franklin = [-97.731270, 30.270090];
 
 
-    // create the popup
-    const popup1 = new mapboxgl.Popup({ offset: 25 }).setText(
-        'Franklins BBQ'
+    const popup1 = new mapboxgl.Popup({offset: 25}).setText(
+        'Aaron’s interest in barbecue started with the backyard cookouts that he and Stacy Franklin, would throw. They had no idea what they were getting themselves into when they opened up a small barbecue trailer on the side of an Austin, Texas interstate in 2009. Today, crowds stand in line for hours for a taste of his mouth-watering brisket. Franklin Barbecue has been celebrated by everyone from Jimmy Kimmel to Anthony Bourdain to President Obama. Aaron is the recipient of the James Beard Award for Best Chef and has also been inducted into the American Royal Barbecue Hall of Fame for 2020.'
     );
 
-    // create DOM element for the marker
+
     const el1 = document.createElement('div');
     el1.id = 'marker1';
 
-    // create the marker
+
     new mapboxgl.Marker(el1)
         .setLngLat(Franklin)
-        .setPopup(popup1) // sets a popup on this marker
+        .setPopup(popup1)
         .addTo(map);
     mapboxgl.accessToken = 'pk.eyJ1IjoiY3JmaXNoYmFjazEiLCJhIjoiY2xwbGZ5MW1kMDI3YTJpbDRpOGQyZ3Z2OSJ9.8KwTH8IqWEuRdkseO-qEcQ';
     const Suerte = [-97.723312, 30.262280];
 
 
-    // create the popup
-    const popup2 = new mapboxgl.Popup({ offset: 25 }).setText(
-        'Suerte'
+    const popup2 = new mapboxgl.Popup({offset: 25}).setText(
+        'Suerte is a restaurant inspired by the people, cooking techniques, and flavors of Mexico. Nationally acclaimed Chef Fermin Nunez and his team pride themselves on the use of local ingredients from our beloved farmers to achieve something delicious and uniquely East Austin. '
     );
 
-    // create DOM element for the marker
+
     const el2 = document.createElement('div');
     el2.id = 'marker2';
 
-    // create the marker
+
     new mapboxgl.Marker(el2)
         .setLngLat(Suerte)
-        .setPopup(popup2) // sets a popup on this marker
+        .setPopup(popup2)
         .addTo(map);
 </script>
 
