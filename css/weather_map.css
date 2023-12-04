@@ -59,13 +59,16 @@ body {
 #Location\ Heading{
     justify-content: center;
     width: 25em
+
 ;
 }
 
 #location{
     text-align: center;
     font-size: x-large;
-    font-family: "Fira Code";
+    font-family: "Fira Code", "sans-serif";
+    background-color: lightgoldenrodyellow;
+    height: 5em;
 }
 
 #4DayForecast {

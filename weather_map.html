@@ -20,7 +20,7 @@
 <!--<section class="h-100" id="theWeather">-->
 
 
-    <div class=" card w-50 offset-3 justify-content-center" id="location">Location</div>
+<div class=" card w-50 offset-3 justify-content-center" id="location"><img src=""><strong>Weather Map</strong></div>
     <div class=" d-flex row text-center" id="Weather Data">
         <div class=" d-flex row row-cols-1 row-cols-sm-2 row-cols-md-4">
             <div class="col-lg-3 card bg-body-secondary" id="temperature">Temperature</div>
@@ -56,8 +56,11 @@
 
         style: 'mapbox://styles/mapbox/streets-v12',
         center: [-97.6223, 30.4548],
-        zoom: 10
+        zoom: 10,
+
     });
+    getWeather(map.getCenter().lat, map.getCenter().lng);
+    getForecast(map.getCenter().lat, map.getCenter().lng);
     // Geocoder Search--------------------------------------
 
     const coordinatesGeocoder = function (query) {
