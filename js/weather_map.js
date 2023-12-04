@@ -16,13 +16,15 @@ function getWeather(lat, lon) {
             const windDirection = data.wind.deg;
             const weatherDescription = data.weather[0].description;
             const visibility = data.visibility;
+            const locationName = data.name;
             console.log(data);
 
             document.getElementById('temperature').textContent = `Temperature: ${temperature}°K`;
             document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
             document.getElementById('wind-speed').textContent = `Wind Speed: ${windSpeed} m/s`;
-            document.getElementById('weather-description').textContent = `Weather: ${weatherDescription}`;
+            document.getElementById('weather-description').textContent = `Weather: ${weatherDescription}`
 
+            document.getElementById('location').textContent = `Location: ${locationName}`;
 
         })
         .catch(error => {
