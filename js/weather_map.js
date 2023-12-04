@@ -50,7 +50,7 @@ function getForecast(lat, lon) {
         });
 }
 
-// Function to process the weather data and calculate a 4-day average forecast
+// Function to process the weather data and for calculating a 4-day average forecast
 function processForecast(data) {
     const dailyData = {};
 

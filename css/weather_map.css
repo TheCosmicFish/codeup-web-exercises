@@ -16,36 +16,35 @@ body {
 }
 
 
-#theMap{
+#theMap {
     position: relative;
     margin: 0 auto;
-   height: 50%;
+    height: 50%;
     width: 75%;
     margin-left: 26em;
     margin-top: 5em;
     justify-content: center;
     justify-items: center;
-    border-color: black;
-    border: thick;
+
 }
 
 
- .coordinates {
-     background: rgba(0, 0, 0, 0.5);
-     color: #fff;
-     position: absolute;
-     bottom: 40px;
-     left: 10px;
-     padding: 5px 10px;
-     margin: 0;
-     font-size: 11px;
-     line-height: 18px;
-     border-radius: 3px;
-     display: none;
- }
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+}
 
 
-#Weather\ Data{
+#Weather\ Data {
     justify-content: space-evenly;
 
 }
@@ -60,16 +59,16 @@ body {
 }
 
 
-#location{
+#location {
 
     text-align: center;
     font-size: x-large;
     font-family: "Fira Code", "sans-serif";
     background-color: lightgoldenrodyellow;
-    height: 2em;
-    width: 10em;
+    height: 3em;
+    width: 15em;
     text-align: center;
-    margin-bottom: 0 ;
+    margin-bottom: 0;
 }
 
 #4DayForecast {
@@ -78,17 +77,17 @@ body {
     align-items: stretch;
 }
 
-#Day1, #Day2, #Day3, #Day4{
-        flex: 1;
-        margin: 10px;
-        padding: 15px;
-        text-align: center;
-        background-color: #f0f0f0;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        overflow: auto;
+#Day1, #Day2, #Day3, #Day4 {
+    flex: 1;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: auto;
     justify-content: space-evenly;
 
-    }
+}
 
 
