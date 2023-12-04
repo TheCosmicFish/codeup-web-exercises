@@ -1,5 +1,4 @@
 body {
-
     font-family: 'Oswald', sans-serif;
     font-size: 1em !important;
     background-image: url("../images/pexelsWeather.jpg");
@@ -13,6 +12,7 @@ body {
     width: 80vh;
     margin: 0 auto;
     zoom: inherit;
+
 }
 
 
@@ -22,9 +22,11 @@ body {
    height: 50%;
     width: 75%;
     margin-left: 26em;
-    margin-top: 10em;
+    margin-top: 5em;
     justify-content: center;
     justify-items: center;
+    border-color: black;
+    border: thick;
 }
 
 
@@ -56,19 +58,18 @@ body {
     justify-self: stretch;
     margin: 0 auto;
 }
-#Location\ Heading{
-    justify-content: center;
-    width: 25em
 
-;
-}
 
 #location{
+
     text-align: center;
     font-size: x-large;
     font-family: "Fira Code", "sans-serif";
     background-color: lightgoldenrodyellow;
-    height: 5em;
+    height: 2em;
+    width: 10em;
+    text-align: center;
+    margin-bottom: 0 ;
 }
 
 #4DayForecast {
@@ -90,7 +91,4 @@ body {
 
     }
 
-#location{
-    text-align: center;
-    margin-bottom: 2em;
-}
+

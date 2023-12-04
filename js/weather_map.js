@@ -9,10 +9,10 @@ function getWeather(lat, lon) {
         .then(response => response.json())
         .then(data => {
             const temperatureKelvin = data.main.temp;
-            const temperatureFahrenheit = ((temperatureKelvin - 273.15) * 9/5 + 32).toFixed(2); // Convert to Fahrenheit
+            const temperatureFahrenheit = ((temperatureKelvin - 273.15) * 9 / 5 + 32).toFixed(2); // Convert to Fahrenheit
 
             const feelsLikeKelvin = data.main.feels_like;
-            const feelsLikeFahrenheit = ((feelsLikeKelvin - 273.15) * 9/5 + 32).toFixed(2); // Convert to Fahrenheit
+            const feelsLikeFahrenheit = ((feelsLikeKelvin - 273.15) * 9 / 5 + 32).toFixed(2); // Convert to Fahrenheit
 
             const humidity = data.main.humidity;
             const windSpeed = data.wind.speed;
@@ -31,9 +31,6 @@ function getWeather(lat, lon) {
             console.error('Error fetching weather data:', error);
         });
 }
-
-
-
 
 
 const foreCast = `https://api.openweathermap.org/data/2.5/forecast?lat=43&lon=24&appid=c3ca25fb3bc74b8420b1b6ca34fe1a33`
@@ -63,7 +60,7 @@ function processForecast(data) {
         const day = date.toISOString().split('T')[0];
 
         if (!dailyData[day]) {
-            dailyData[day] = { temps: [], humidities: [], windSpeeds: [], descriptions: [] };
+            dailyData[day] = {temps: [], humidities: [], windSpeeds: [], descriptions: []};
         }
 
         dailyData[day].temps.push(item.main.temp);
@@ -76,7 +73,7 @@ function processForecast(data) {
     const fourDayForecast = Object.keys(dailyData).slice(0, 4).map(day => {
         const dayData = dailyData[day];
         const avgTempKelvin = dayData.temps.reduce((acc, temp) => acc + temp, 0) / dayData.temps.length;
-        const avgTempFahrenheit = ((avgTempKelvin - 273.15) * 9/5 + 32).toFixed(2); // Convert to Fahrenheit
+        const avgTempFahrenheit = ((avgTempKelvin - 273.15) * 9 / 5 + 32).toFixed(2); // Convert to Fahrenheit
         const avgHumidity = dayData.humidities.reduce((acc, hum) => acc + hum, 0) / dayData.humidities.length;
         const avgWindSpeed = dayData.windSpeeds.reduce((acc, ws) => acc + ws, 0) / dayData.windSpeeds.length;
         const weatherDescription = dayData.descriptions[0];
@@ -91,11 +88,10 @@ function processForecast(data) {
     });
 
 
-
-
     // Display the forecast
     displayForecast(fourDayForecast);
 }
+
 function displayForecast(forecast) {
     forecast.forEach((dayForecast, index) => {
         let content = `
@@ -120,6 +116,11 @@ function displayForecast(forecast) {
         }
     });
 }
+
+
+
+
+
 
 
 

@@ -17,35 +17,36 @@
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 
 
-<!--<section class="h-100" id="theWeather">-->
 
 
-<div class=" card w-50 offset-3 justify-content-center" id="location"><img src=""><strong>Weather Map</strong></div>
+
+
+
+
     <div class=" d-flex row text-center" id="Weather Data">
         <div class=" d-flex row row-cols-1 row-cols-sm-2 row-cols-md-4">
-            <div class="col-lg-3 card bg-body-secondary" id="temperature">Temperature</div>
-            <div class="col-lg-3 card bg-body-secondary" id="humidity">Humidity</div>
-            <div class="col-lg-3 card bg-body-secondary" id="wind-speed">Wind-Speed</div>
-            <div class="col-lg-3 card bg-body-secondary" id="weather-description">Weather</div>
+            <div class="col-lg-3 card bg-body-secondary border-3 border-dark" id="temperature">Temperature</div>
+            <div class="col-lg-3 card bg-body-secondary border-3 border-dark" id="humidity">Humidity</div>
+            <div class=" d-flex card   justify-content-center" id="location"></div>
+            <div class="col-lg-3 card bg-body-secondary border-3 border-dark" id="wind-speed">Wind-Speed</div>
+            <div class="col-lg-3 card bg-body-secondary border-3 border-dark" id="weather-description">Weather</div>
         </div>
     </div>
 
     <div class=" row  " id="4DayForecast">
 
-            <div class="  col card bg-body-secondary " id="Day1"></div>
-            <div class=" col card bg-body-secondary" id="Day2"></div>
-            <div class=" col card bg-body-secondary" id="Day3"></div>
-            <div class="  col card bg-body-secondary" id="Day4"></div>
+            <div class="  col card bg-body-secondary border-3 border-dark" id="Day1"></div>
+            <div class=" col card bg-body-secondary border-3 border-dark" id="Day2"></div>
+            <div class=" col card bg-body-secondary border-3 border-dark" id="Day3"></div>
+            <div class="  col card bg-body-secondary border-3 border-dark" id="Day4"></div>
 
     </div>
+<!-- Map ----------->
+
+<div  id="map">
 
 
-
-<!--</section>-->
-
-
-
-<div  id="map"></div>
+</div>
 <pre id="coordinates" class="coordinates"></pre>
 
 <script>
@@ -61,6 +62,7 @@
     });
     getWeather(map.getCenter().lat, map.getCenter().lng);
     getForecast(map.getCenter().lat, map.getCenter().lng);
+
     // Geocoder Search--------------------------------------
 
     const coordinatesGeocoder = function (query) {
@@ -127,7 +129,7 @@
     geocoder.on('result', function (e){
 
 
-        // Move the existing draggable marker to the geocode result location
+        // Move the marker to the geocode result location
         Originalmarker.setLngLat(e.result.geometry.coordinates);
 
         // Fetch weather data for the new location
@@ -136,13 +138,12 @@
     });
 
 
-
-
 // Nav Controls--------------------------------
 
     map.addControl(new mapboxgl.NavigationControl());
 
 // Marker--------------------------------------
+
     const Originalmarker = new mapboxgl.Marker({
         draggable: true
     })
@@ -158,7 +159,6 @@
     }
 
     Originalmarker.on('dragend', onDragEnd);
-
 
     // Marker set on click---------------------------------------
     map.on('click', function(e) {
