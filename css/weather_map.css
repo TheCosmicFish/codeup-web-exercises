@@ -6,12 +6,13 @@ body {
 }
 
 #map {
-display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     height: 70vh;
     width: 80vh;
     margin: 0 auto;
+    zoom: inherit;
 }
 
 

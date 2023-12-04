@@ -135,10 +135,11 @@
 
 
 
+// Nav Controls--------------------------------
 
     map.addControl(new mapboxgl.NavigationControl());
 
-
+// Marker--------------------------------------
     const Originalmarker = new mapboxgl.Marker({
         draggable: true
     })
@@ -155,6 +156,17 @@
 
     Originalmarker.on('dragend', onDragEnd);
 
+
+    // Marker set on click---------------------------------------
+    map.on('click', function(e) {
+        e.preventDefault()
+        Originalmarker.setLngLat(e.lngLat);
+        coordinates.style.display = 'block';
+        coordinates.innerHTML = `Longitude: ${e.lngLat.lng}<br />Latitude: ${e.lngLat.lat}`;
+        getWeather(e.lngLat.lat, e.lngLat.lng);
+        getForecast(e.lngLat.lat, e.lngLat.lng)
+    });
+
 // User Location-----------------------------------------------------
 
     map.addControl(
@@ -168,16 +180,7 @@
             showUserHeading: true
         }))
 
-// Marker set on click---------------------------------------
 
-    map.on('click', function(e) {
-
-        Originalmarker.setLngLat(e.lngLat);
-        coordinates.style.display = 'block';
-        coordinates.innerHTML = `Longitude: ${e.lngLat.lng}<br />Latitude: ${e.lngLat.lat}`;
-        getWeather(e.lngLat.lat, e.lngLat.lng);
-        getForecast(e.lngLat.lat, e.lngLat.lng)
-    });
 
 </script>
 
