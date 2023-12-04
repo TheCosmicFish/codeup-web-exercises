@@ -26,9 +26,14 @@
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 <section id="theWeather">
-   <p>
-
-   </p>
+    <div class="container text-center" id="Weather Data">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+            <div class="col" id="temperature">Column</div>
+            <div class="col" id="humidity">Column</div>
+            <div class="col" id="wind-speed">Column</div>
+            <div class="col" id="weather-description">Column</div>
+        </div>
+    </div>
 
 </section>
 
@@ -115,20 +120,15 @@
     map.addControl(geocoder)
 
     geocoder.on('result', function (e){
-        if (Originalmarker) {
-            Originalmarker.remove();
-        }
 
-        // Create a new draggable marker at the geocode result location
-        Newmarker = new mapboxgl.Marker({
-            draggable: true
-        })
-            .setLngLat(e.result.geometry.coordinates)
-            .addTo(map);
 
-        // Add the drag end event handler to the new marker
-        Newmarker.on('dragend', onDragEnd);
+        // Move the existing draggable marker to the geocode result location
+        Originalmarker.setLngLat(e.result.geometry.coordinates);
+
+        // Fetch weather data for the new location
+        getWeather(e.result.geometry.coordinates[1], e.result.geometry.coordinates[0]);
     });
+
 
 
 
@@ -169,10 +169,9 @@
     map.on('click', function(e) {
 
         Originalmarker.setLngLat(e.lngLat);
-
-
         coordinates.style.display = 'block';
         coordinates.innerHTML = `Longitude: ${e.lngLat.lng}<br />Latitude: ${e.lngLat.lat}`;
+        getWeather(e.lngLat.lat, e.lngLat.lng);
     });
 
 </script>

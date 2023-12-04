@@ -8,12 +8,29 @@ function getWeather(lat, lon) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
+            const temperature = data.main.temp;
+            const feelsLike = data.main.feels_like;
+            const humidity = data.main.humidity;
+            const pressure = data.main.pressure;
+            const windSpeed = data.wind.speed;
+            const windDirection = data.wind.deg;
+            const weatherDescription = data.weather[0].description;
+            const visibility = data.visibility;
             console.log(data);
+
+            document.getElementById('temperature').textContent = `Temperature: ${temperature}°K`;
+            document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
+            document.getElementById('wind-speed').textContent = `Wind Speed: ${windSpeed} m/s`;
+            document.getElementById('weather-description').textContent = `Weather: ${weatherDescription}`;
+
+
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
         });
 }
+
+
 
 
 
