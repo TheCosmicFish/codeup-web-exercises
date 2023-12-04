@@ -1,16 +1,23 @@
-#map {
+body {
 
-    position: absolute;
-    margin: auto;
-    padding: 2em;
-    width:75%;
-    height: 100%;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em !important;
+    background-image: url("../images/pexelsWeather.jpg");
+}
+
+#map {
+display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 80vh;
+    margin: 0 auto;
 }
 
 
 #theMap{
-    position: absolute;
-    margin: auto;
+    position: relative;
+    margin: 0 auto;
    height: 50%;
     width: 75%;
     margin-left: 26em;
@@ -34,20 +41,19 @@
      display: none;
  }
 
-main {
-    min-height: 60vh;
-    height: auto;
-    background-color: #A3C9A8;
-}
-body {
-    background-color: #EAD2AC;
-    font-family: 'Oswald', sans-serif;
-    font-size: 1em !important;
+
+#Weather\ Data{
+    justify-content: space-evenly;
+
 }
 
-.card{
-    height: 5em;
+#temperature, #wind-speed, #humidity, #weather-description {
+    display: flex;
     justify-content: center;
+    height: 8em;
+    width: 8em;
+    justify-self: stretch;
+    margin: 0 auto;
 }
 #Location\ Heading{
     justify-content: center;
@@ -59,4 +65,28 @@ body {
     text-align: center;
     font-size: x-large;
     font-family: "Fira Code";
+}
+
+#4DayForecast {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+#Day1, #Day2, #Day3, #Day4{
+        flex: 1;
+        margin: 10px;
+        padding: 15px;
+        text-align: center;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        overflow: auto;
+    justify-content: space-evenly;
+
+    }
+
+#location{
+    text-align: center;
+    margin-bottom: 2em;
 }
