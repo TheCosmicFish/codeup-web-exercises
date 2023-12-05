@@ -1,4 +1,4 @@
-const getWeather2 = 'https://api.openweathermap.org/data/2.5/weather?lat=30&lon=-97&appid=c3ca25fb3bc74b8420b1b6ca34fe1a33\n'
+
 
 function getWeather(lat, lon) {
 
@@ -70,7 +70,7 @@ function processForecast(data) {
     });
 
     // Calculate averages and select description for each day
-    const fourDayForecast = Object.keys(dailyData).slice(0, 4).map(day => {
+    const fourDayForecast = Object.keys(dailyData).slice(1, 5).map(day => {
         const dayData = dailyData[day];
         const avgTempKelvin = dayData.temps.reduce((acc, temp) => acc + temp, 0) / dayData.temps.length;
         const avgTempFahrenheit = ((avgTempKelvin - 273.15) * 9 / 5 + 32).toFixed(2); // Convert to Fahrenheit
