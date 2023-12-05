@@ -1,5 +1,5 @@
 
-
+//-----Getting Weather
 function getWeather(lat, lon) {
 
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=c3ca25fb3bc74b8420b1b6ca34fe1a33
@@ -33,7 +33,7 @@ function getWeather(lat, lon) {
 }
 
 
-const foreCast = `https://api.openweathermap.org/data/2.5/forecast?lat=43&lon=24&appid=c3ca25fb3bc74b8420b1b6ca34fe1a33`
+
 
 // Function to fetch weather data based on latitude and longitude
 function getForecast(lat, lon) {
