@@ -2,7 +2,7 @@
 //-----Getting Weather
 function getWeather(lat, lon) {
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=c3ca25fb3bc74b8420b1b6ca34fe1a33
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${Weather_Key}
 `
 
     fetch(url)
@@ -38,7 +38,7 @@ function getWeather(lat, lon) {
 // Function to fetch weather data based on latitude and longitude
 function getForecast(lat, lon) {
 
-    const url2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=c3ca25fb3bc74b8420b1b6ca34fe1a33`;
+    const url2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${Weather_Key}`;
 
     fetch(url2)
         .then(response => response.json())
