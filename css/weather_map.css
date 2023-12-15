@@ -1,48 +1,50 @@
 body {
-
     font-family: 'Oswald', sans-serif;
     font-size: 1em !important;
     background-image: url("../images/pexelsWeather.jpg");
 }
 
 #map {
-display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     height: 70vh;
     width: 80vh;
     margin: 0 auto;
+    zoom: inherit;
+
 }
 
 
-#theMap{
+#theMap {
     position: relative;
     margin: 0 auto;
-   height: 50%;
+    height: 50%;
     width: 75%;
     margin-left: 26em;
-    margin-top: 10em;
+    margin-top: 5em;
     justify-content: center;
     justify-items: center;
+
 }
 
 
- .coordinates {
-     background: rgba(0, 0, 0, 0.5);
-     color: #fff;
-     position: absolute;
-     bottom: 40px;
-     left: 10px;
-     padding: 5px 10px;
-     margin: 0;
-     font-size: 11px;
-     line-height: 18px;
-     border-radius: 3px;
-     display: none;
- }
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+}
 
 
-#Weather\ Data{
+#Weather\ Data {
     justify-content: space-evenly;
 
 }
@@ -55,16 +57,17 @@ display: flex;
     justify-self: stretch;
     margin: 0 auto;
 }
-#Location\ Heading{
-    justify-content: center;
-    width: 25em
-;
-}
 
-#location{
+
+#location {
+
     text-align: center;
     font-size: x-large;
-    font-family: "Fira Code";
+    font-family: "Fira Code", "sans-serif";
+    background-color: lightgoldenrodyellow;
+    height: 3em;
+    width: 15em;
+    margin-bottom: 0;
 }
 
 #4DayForecast {
@@ -73,20 +76,17 @@ display: flex;
     align-items: stretch;
 }
 
-#Day1, #Day2, #Day3, #Day4{
-        flex: 1;
-        margin: 10px;
-        padding: 15px;
-        text-align: center;
-        background-color: #f0f0f0;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        overflow: auto;
+#Day1, #Day2, #Day3, #Day4 {
+    flex: 1;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: auto;
     justify-content: space-evenly;
 
-    }
-
-#location{
-    text-align: center;
-    margin-bottom: 2em;
 }
+
+
